@@ -8,11 +8,11 @@ import vista_control.MenuEditoriales;
 public class Index {
 
     public static void Salir() {
-        System.out.println("Bye bye");
+        System.out.println("Hasta la proxima...");
     }
 
     public static void Error() {
-        System.out.println("Error, intenta de nuevo...");
+        System.out.println("Error, solo opciones del menú...");
     }
 
     public static void Menu() {
