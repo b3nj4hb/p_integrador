@@ -15,7 +15,7 @@ public class ReporteDAO implements CRUD_reporte {
     Prestamo e = new Prestamo();
 
     @Override
-    public boolean lacosadelstock(int idlibro) {
+    public boolean stock(int idlibro) {
         String consulta = " update libro " + " set " + " Stock_disponibles = Stock_disponibles-1 " + " where idlibro= " + idlibro;
         try {
             con = cn.getConnection();

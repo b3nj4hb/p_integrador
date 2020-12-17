@@ -15,5 +15,5 @@ public interface CRUD_reporte {
 
     public boolean eliminarusuario(int idprestamo);
 
-    public boolean lacosadelstock(int idlibro);
+    public boolean stock(int idlibro);
 }

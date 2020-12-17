@@ -39,14 +39,14 @@ public class Index {
         System.out.println("3. Eliminar");
         System.out.println("4. Listar");
         System.out.println("5. Exportar");
-        System.out.println("6. Salir al menú principal");
+        System.out.println("6. Salir");
         System.out.print("Escoja opción [1-6]: ");
     }
 
     public static void menu_devolucion() {
         System.out.println("\n\tMenu Devolucion");
         System.out.println("1. Devolución de Libros");
-        System.out.println("2. Listar Devoluciones hechas");
+        System.out.println("2. Listar Devoluciones");
         System.out.println("3. Exportar");
         System.out.println("4. Salir al menú principal");
         System.out.print("Escoja opción [1-4]: ");
@@ -55,7 +55,7 @@ public class Index {
     public static void menu_prestamo() {
         System.out.println("\n\tMenu Prestamo");
         System.out.println("1. Agregar Prestamo");
-        System.out.println("2. Listar Prestamos Pendientes");
+        System.out.println("2. Listar Prestamos");
         System.out.println("3. Exportar");
         System.out.println("4. Salir al menú principal");
         System.out.print("Escoja opción [1-4]: ");
@@ -336,7 +336,7 @@ public class Index {
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/devlucion.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/devolucion.txt");
             DevolucionDAO reporteDao = new DevolucionDAO();
             List<Devolucion> reportes = reporteDao.listardevolucion();
             salida.println("\t ~~ Lista de Devoluciones ~~");
@@ -858,7 +858,7 @@ public class Index {
                 Prestamo prestamo = new Prestamo(fecha_prestamo, fecha_devolucion, estado, idusuario, idlibro);
                 ReporteDAO reporteDao = new ReporteDAO();
                 reporteDao.agregarusuario(prestamo);
-                reporteDao.lacosadelstock(idlibro);
+                reporteDao.stock(idlibro);
             }
         }
     }
