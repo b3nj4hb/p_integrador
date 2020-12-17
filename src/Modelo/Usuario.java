@@ -1,25 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
-/**
- *
- * @author Alvaro Alva Chipana
- */
 public class Usuario {
-      private int idusuario;
+
+    private int idusuario;
     private String nombre;
     private String apellidos;
     private String dni;
     private String estado;
-     public String getNombreCompleto(){
+
+    public String getNombreCompleto() {
         return apellidos.toUpperCase() + ", " + nombre;
     }
+
     public Usuario() {
-    
+
     }
 
     public Usuario(String nombre, String apellidos, String dni, String estado) {

@@ -1,26 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
-/**
- *
- * @author Alvaro Alva Chipana
- */
 public class Libro {
+
     private int idlibro;
     private String titulo;
     private String isbn;
-   private String paginas;
-   private String año;
-   
-   private int stock;
-   private int Stock_disponibles;
-   private int idautor;
-   private int idpais;
-   private int ideditorial;
+    private String paginas;
+    private String año;
+
+    private int stock;
+    private int Stock_disponibles;
+    private int idautor;
+    private int idpais;
+    private int ideditorial;
 
     public Libro(int idlibro, String titulo, String isbn, String paginas, String año, int stock, int Stock_disponibles, int idautor, int idpais, int ideditorial) {
         this.idlibro = idlibro;
@@ -130,6 +122,4 @@ public class Libro {
         this.ideditorial = ideditorial;
     }
 
-   
-   
 }

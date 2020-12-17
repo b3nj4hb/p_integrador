@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ModeloDao;
 
 import java.sql.*;
@@ -12,12 +7,13 @@ import java.util.List;
 import Modelo.Editorial;
 import Interface.CRUDeditorial;
 
-public class EditorialDAO implements CRUDeditorial{
-ConectaBd cn = new ConectaBd();
-     Connection con;
-     PreparedStatement pst;
-     ResultSet rs;
-     Editorial e = new Editorial();
+public class EditorialDAO implements CRUDeditorial {
+
+    ConectaBd cn = new ConectaBd();
+    Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
+    Editorial e = new Editorial();
 
     @Override
     public List listareditoriales() {
@@ -27,7 +23,7 @@ ConectaBd cn = new ConectaBd();
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
             rs = pst.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {
                 Editorial editorial = new Editorial();
                 editorial.setIdeditorial(rs.getInt("ideditorial"));
                 editorial.setNombre(rs.getString("nombre"));
@@ -43,16 +39,17 @@ ConectaBd cn = new ConectaBd();
         }
         return editoriales;
     }
+
     @Override
     public Editorial buscareditorial(int ideditorial) {
         String consulta = " select * "
-                        + " from editorial  "
-                        + " where ideditorial =  " + ideditorial;
+                + " from editorial  "
+                + " where ideditorial =  " + ideditorial;
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
             rs = pst.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {
                 e.setIdeditorial(rs.getInt("idep"));
                 e.setNombre(rs.getString("nombre"));
                 e.setCodigo(rs.getString("codigo"));
@@ -69,16 +66,16 @@ ConectaBd cn = new ConectaBd();
 
     @Override
     public boolean agregareditorial(Editorial editorial) {
-        String consulta= " insert into  "
-                        + " editorial (nombre, codigo, direccion, URL, estado) "
-                        + " values('"+ editorial.getNombre()+"', "
-                        + " '"+ editorial.getCodigo()+"', "
-                        + " '"+ editorial.getDireccion()+"', "
-                        + " '"+ editorial.getURL()+"', "
-                        + " '"+ editorial.getEstado()+"')";
-       try {
-             con= cn.getConnection();
-            pst=con.prepareStatement(consulta);
+        String consulta = " insert into  "
+                + " editorial (nombre, codigo, direccion, URL, estado) "
+                + " values('" + editorial.getNombre() + "', "
+                + " '" + editorial.getCodigo() + "', "
+                + " '" + editorial.getDireccion() + "', "
+                + " '" + editorial.getURL() + "', "
+                + " '" + editorial.getEstado() + "')";
+        try {
+            con = cn.getConnection();
+            pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en agregar");
@@ -90,34 +87,34 @@ ConectaBd cn = new ConectaBd();
     @Override
     public boolean editareditorial(Editorial ep) {
         String consulta = " update editorial "
-                        + " set "
-                        + " nombre = '"+ ep.getNombre()+"', "
-                        + " codigo = '"+ ep.getCodigo()+"', "
-                        + " direccion = '"+ ep.getDireccion()+"', "
-                        + " URL = '"+ ep.getURL()+"', "
-                        + " estado = '"+ ep.getEstado()+"' "
-                        + " where "
-                        + " ideditorial = " + ep.getIdeditorial();
+                + " set "
+                + " nombre = '" + ep.getNombre() + "', "
+                + " codigo = '" + ep.getCodigo() + "', "
+                + " direccion = '" + ep.getDireccion() + "', "
+                + " URL = '" + ep.getURL() + "', "
+                + " estado = '" + ep.getEstado() + "' "
+                + " where "
+                + " ideditorial = " + ep.getIdeditorial();
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
-            pst.executeUpdate();            
+            pst.executeUpdate();
         } catch (Exception error) {
             System.out.println("Error: Problemas con la EDICIÓN");
             System.out.println(error.getMessage());
-            return false;            
+            return false;
         }
         return true;
     }
 
     @Override
     public boolean eliminareditorial(int ideditorial) {
-        String consulta= " delete from editorial"
-                        + " where  "
-                        + " ideditorial =  " + ideditorial;
-          try {
-             con= cn.getConnection();
-            pst=con.prepareStatement(consulta);
+        String consulta = " delete from editorial"
+                + " where  "
+                + " ideditorial =  " + ideditorial;
+        try {
+            con = cn.getConnection();
+            pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en Eliminar");

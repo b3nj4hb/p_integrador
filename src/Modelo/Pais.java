@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
-/**
- *
- * @author Alvaro Alva Chipana
- */
 public class Pais {
+
     private int idpais;
     private String nombre;
     private String estado;
-    
+
     public Pais() {
-        
+
     }
 
     public Pais(int idpais, String nombre, String estado) {
@@ -29,7 +21,6 @@ public class Pais {
         this.estado = estado;
     }
 
-   
     public int getIdpais() {
         return idpais;
     }
@@ -53,5 +44,5 @@ public class Pais {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
 }

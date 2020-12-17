@@ -1,30 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
-/**
- *
- * @author Alvaro Alva Chipana
- */
 public class ReporteLibro {
-     private int idlibro;
+
+    private int idlibro;
     private String titulo;
     private String isbn;
-   private String paginas;
-   private String año;
-   private int sotck;
-   private int Stock_disponibles;
-   private String anombre;
-   private String aapellidos;
-   private String pnombre;
-   private String enombre;
-   public String getNombreCompleto(){
+    private String paginas;
+    private String año;
+    private int sotck;
+    private int Stock_disponibles;
+    private String anombre;
+    private String aapellidos;
+    private String pnombre;
+    private String enombre;
+
+    public String getNombreCompleto() {
         return aapellidos.toUpperCase() + ", " + anombre;
     }
-    
 
     public ReporteLibro(int idlibro, String titulo, String isbn, String paginas, String año, int Stock_disponibles, String anombre, String aapellidos, String pnombre, String enombre) {
         this.idlibro = idlibro;
@@ -37,7 +29,7 @@ public class ReporteLibro {
         this.aapellidos = aapellidos;
         this.pnombre = pnombre;
         this.enombre = enombre;
-        
+
     }
 
     public ReporteLibro() {
@@ -131,6 +123,4 @@ public class ReporteLibro {
         this.sotck = sotck;
     }
 
-    
-   
 }

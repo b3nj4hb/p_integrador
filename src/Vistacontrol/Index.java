@@ -1,4 +1,3 @@
-
 package Vistacontrol;
 
 import utils.Leer;
@@ -7,12 +6,15 @@ import Vistacontrol.MenuLibro;
 import Vistacontrol.MenuEditoriales;
 
 public class Index {
+
     public static void Salir() {
         System.out.println("Bye bye");
     }
+
     public static void Error() {
         System.out.println("Error, intenta de nuevo...");
     }
+
     public static void Menu() {
         System.out.println("\n----------------MENU PRINCIPAL----------------");
         System.out.println("1. Datos Libros");
@@ -25,15 +27,16 @@ public class Index {
         System.out.println("8. Devolucion");
         System.out.println("9. Salir");
         System.out.print("Escoja opción [1-9]: ");
-        
+
     }
+
     public static void Inicio() {
         int opcion;
-        do {            
+        do {
             Menu();
             opcion = Leer.entero();
-            switch(opcion){
-                case 1: 
+            switch (opcion) {
+                case 1:
                     MenuLibro.InicioL();
                     break;
                 case 2:
@@ -45,14 +48,18 @@ public class Index {
                 case 4:
                     MenuPaises.InicioPa();
                     break;
-                    case 5:
+                case 5:
                     MenuUsuario.usuario();
                     break;
                 case 6:
-                    MenuLibro.listarlibro();System.out.println("\n");
-                    MenuEditoriales.ListarEditoriales();System.out.println("\n");
-                    MenuAutor.listar2();System.out.println("\n");
-                    MenuPaises.ListarPaises();System.out.println("\n");
+                    MenuLibro.listarlibro();
+                    System.out.println("\n");
+                    MenuEditoriales.ListarEditoriales();
+                    System.out.println("\n");
+                    MenuAutor.listar2();
+                    System.out.println("\n");
+                    MenuPaises.ListarPaises();
+                    System.out.println("\n");
                     MenuUsuario.listarusuario();
                     break;
                 case 7:
@@ -63,13 +70,14 @@ public class Index {
                     break;
                 case 9:
                     Salir();
-                    break; 
+                    break;
                 default:
                     Error();
                     break;
             }
-        } while (opcion!=9);
+        } while (opcion != 9);
     }
+
     public static void main(String[] args) {
         Inicio();
     }
