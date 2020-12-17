@@ -632,14 +632,14 @@ public class Index {
         String nombre;
         String apellidos;
         System.out.println("\n\t~~ Agregar Autor ~~");
-        System.out.println("Nombre:");
+        System.out.print("Nombre: ");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
             System.out.print("Nombre: ");
             nombre = Leer.cadena();
         }
-        System.out.println("Apellidos:");
+        System.out.print("Apellidos: ");
         apellidos = Leer.cadena();
         while (apellidos.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
@@ -659,35 +659,35 @@ public class Index {
         String estado;
 
         System.out.println("\n\t~~ Agregar Editorial ~~");
-        System.out.println("Nombre: ");
+        System.out.print("Nombre: ");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
             System.out.println("Nombre: ");
             nombre = Leer.cadena();
         }
-        System.out.println("\nCódigo: ");
+        System.out.print("\nCódigo: ");
         codigo = Leer.cadena();
         while (codigo.length() > 10) {
             System.out.println("Limite de digitos superado(Limite=10), intente de nuevo.");
             System.out.println("\nCódigo: ");
             codigo = Leer.cadena();
         }
-        System.out.println("\nDirección: ");
+        System.out.print("\nDirección: ");
         direccion = Leer.cadena();
         while (direccion.length() > 80) {
             System.out.println("Limite de digitos superado(Limite=80), intente de nuevo.");
             System.out.println("\nDirección: ");
             direccion = Leer.cadena();
         }
-        System.out.println("\nURL: ");
+        System.out.print("\nURL: ");
         URL = Leer.cadena();
         while (URL.length() > 100) {
             System.out.println("Limite de digitos superado(Limite=100), intente de nuevo.");
             System.out.println("\nURL: ");
             URL = Leer.cadena();
         }
-        System.out.println("\nEstado: ");
+        System.out.print("\nEstado: ");
         estado = Leer.cadena();
         while (estado.length() != 1) {
             System.out.println("Limite de digitos superado(Limite=1), intente de nuevo.");
@@ -711,47 +711,47 @@ public class Index {
         int idautor;
         int idpais;
         int ideditorial;
-        System.out.println("Titulo:");
+        System.out.print("Titulo: ");
         titulo = Leer.cadena();
         while (titulo.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
             System.out.println("Titulo:");
             titulo = Leer.cadena();
         }
-        System.out.println("ISBN: ");
+        System.out.print("ISBN: ");
         isbn = Leer.cadena();
         while (isbn.length() > 14) {
             System.out.println("Limite de digitos superado(Limite=14), intente de nuevo.");
             System.out.println("ISBN: ");
             isbn = Leer.cadena();
         }
-        System.out.println("Paginas:");
+        System.out.print("Paginas: ");
         paginas = Leer.cadena();
         while (paginas.length() > 10) {
             System.out.println("Limite de digitos superado(Limite=10), intente de nuevo.");
             System.out.println("Paginas:");
             paginas = Leer.cadena();
         }
-        System.out.println("Año:");
+        System.out.print("Año: ");
         año = Leer.cadena();
         while (año.length() > 4) {
             System.out.println("Limite de digitos superado(Limite=4), intente de nuevo.");
             System.out.println("Año:");
             año = Leer.cadena();
         }
-        System.out.println("Stock:");
+        System.out.print("Stock: ");
         stock = Leer.entero();
 
-        System.out.println("Stock disponible:");
+        System.out.print("Stock disponible: ");
         Stock_disponibles = Leer.entero();
         listar_autor();
-        System.out.println("Idautor:");
+        System.out.print("Idautor: ");
         idautor = Leer.entero();
         listar_pais();
-        System.out.println("Idpais:");
+        System.out.print("Idpais: ");
         idpais = Leer.entero();
         listar_editorial();
-        System.out.println("Ideditorial:");
+        System.out.print("Ideditorial: ");
         ideditorial = Leer.entero();
         Libro libro = new Libro(titulo, isbn, paginas, año, stock, Stock_disponibles, idautor, idpais, ideditorial);
         LibroDAO libroDao = new LibroDAO();
@@ -767,7 +767,7 @@ public class Index {
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
-            System.out.println("Nombre:");
+            System.out.print("Nombre: ");
             nombre = Leer.cadena();
         }
         System.out.print("Estado: ");
@@ -789,7 +789,7 @@ public class Index {
         String apellidos;
         String dni;
         String estado;
-        System.out.println("Nombre:");
+        System.out.print("Nombre: ");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
@@ -797,25 +797,25 @@ public class Index {
             nombre = Leer.cadena();
         }
 
-        System.out.println("Apellidos:");
+        System.out.print("Apellidos: ");
         apellidos = Leer.cadena();
         while (apellidos.length() > 50) {
             System.out.println("Limite de digitos superado(Limite=50), intente de nuevo.");
-            System.out.println("Apellidos:");
+            System.out.print("Apellidos: ");
             apellidos = Leer.cadena();
         }
-        System.out.println("Dni:");
+        System.out.print("Dni: ");
         dni = Leer.cadena();
         while (dni.length() != 8) {
             System.out.println("Limite de digitos superado(Limite=8), intente de nuevo.");
-            System.out.println("Dni:");
+            System.out.print("Dni: ");
             dni = Leer.cadena();
         }
-        System.out.println("Estado:");
+        System.out.print("Estado: ");
         estado = Leer.cadena();
         while (estado.length() != 1) {
             System.out.println("Limite de digitos superado(Limite=1), intente de nuevo.");
-            System.out.println("Estado:");
+            System.out.print("Estado: ");
             estado = Leer.cadena();
         }
         Usuario usuario = new Usuario(nombre, apellidos, dni, estado);
@@ -831,10 +831,10 @@ public class Index {
         int idusuario;
         int idlibro;
         listar_usuario();
-        System.out.print("Elija del usuario a prestar:");
+        System.out.print("Elija del usuario a prestar: ");
         idusuario = Leer.entero();
         listar_libro();
-        System.out.print("Elija id del libro a prestar:");
+        System.out.print("Elija id del libro a prestar: ");
         idlibro = Leer.entero();
 
         int a;
