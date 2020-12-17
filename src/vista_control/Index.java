@@ -101,6 +101,7 @@ public class Index {
     public static void switch_autor() {
         int opcion;
         do {
+            System.out.println("\n\tMenu Autor");
             Menu_secundario();
             opcion = Leer.entero();
             switch (opcion) {
@@ -157,6 +158,7 @@ public class Index {
     public static void switch_editorial() {
         int opcion;
         do {
+            System.out.println("\n\tMenu Editorial");
             Menu_secundario();
             opcion = Leer.entero();
             switch (opcion) {
@@ -188,6 +190,7 @@ public class Index {
     public static void switch_libro() {
         int opcion;
         do {
+            System.out.println("\n\tMenu Libro");
             Menu_secundario();
             opcion = Leer.entero();
             switch (opcion) {
@@ -219,6 +222,7 @@ public class Index {
     public static void switch_pais() {
         int opcion;
         do {
+            System.out.println("\n\tMenu Pais");
             Menu_secundario();
             opcion = Leer.entero();
             switch (opcion) {
@@ -275,6 +279,7 @@ public class Index {
     public static void switch_usuario() {
         int opcion;
         do {
+            System.out.println("\n\tMenu Usuario");
             Menu_secundario();
             opcion = Leer.entero();
             switch (opcion) {
@@ -304,14 +309,14 @@ public class Index {
     }
 
     public static void exportar_autores() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaAutores.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/autores.txt");
             AutorDAO autorDao = new AutorDAO();
             List<Autor> autores = autorDao.listarautor();
-            salida.println("----------------------Listado de Autores--------------------");
+            salida.println("\t ~~ Lista de Autores ~~");
             salida.println("ID\tNombreCompleto");
             for (Autor autor : autores) {
                 salida.println(autor.getIdautor() + "\t"
@@ -327,14 +332,14 @@ public class Index {
     }
 
     public static void exportar_devolucion() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaDevolucion.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/devlucion.txt");
             DevolucionDAO reporteDao = new DevolucionDAO();
             List<Devolucion> reportes = reporteDao.listardevolucion();
-            salida.println("-----------------------------------------------Listado de Devoluciones Dadas------------------------------------------------");
+            salida.println("\t ~~ Lista de Devoluciones ~~");
             salida.println("ID\tFecha_Prestamo\t\tFecha_Devolucion\tUsuario\t\t\t\t\tTitulo\t\t\tEstado");
             for (Devolucion reporte : reportes) {
                 salida.println(
@@ -354,14 +359,14 @@ public class Index {
     }
 
     public static void exportar_editorial() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaEditoriales.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/editorial.txt");
             EditorialDAO editorialDAO = new EditorialDAO();
             List<Editorial> editoriales = editorialDAO.listareditoriales();
-            salida.println("---------------------------------------------------------------------Listado de Editoriales------------------------------------------------------------------------------------------------------");
+            salida.println("\t ~~ Lista de Editoriales ~~");
             salida.println("ID\tNombre\t\t\tCodigo\t\t\tDireccion\t\t\t\t\t\t\tURL\t\t\t\t\t\t\t\tEstado");
             for (Editorial editorial : editoriales) {
                 salida.println(
@@ -381,14 +386,14 @@ public class Index {
     }
 
     public static void exportar_libros() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaLibros.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/libro.txt");
             LibroDAO libroDao = new LibroDAO();
             List<ReporteLibro> reportes = libroDao.listarlibro();
-            salida.println("---------------------------------------------------------------------------Listado de Libros-------------------------------------------------------------");
+            salida.println("\t ~~ Lista de Libros ~~");
             salida.println("ID\tTitulo\t\t\tISBN\t\tPaginas\t\t\tAño\tStock\tAutor\t\t\t\tPais\t\t\tEditorial");
             for (ReporteLibro reporte : reportes) {
                 salida.println(reporte.getIdlibro() + "\t"
@@ -401,7 +406,6 @@ public class Index {
                         + Dar.Formatoo(reporte.getPnombre()) + "\t"
                         + Dar.Formatoo(reporte.getEnombre())
                 );
-
             }
 
             salida.flush();
@@ -413,14 +417,14 @@ public class Index {
     }
 
     public static void exportar_paises() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaPaises.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/pais.txt");
             PaisDAO paisDAO = new PaisDAO();
             List<Pais> paises = paisDAO.listarpaises();
-            salida.println("--------Listado de Paises--------");
+            salida.println("\t ~~ Lista de Paises ~~");
             salida.println("ID\tNombre\t\t\tEstado");
             for (Pais pais : paises) {
                 salida.println(pais.getIdpais() + "\t"
@@ -438,14 +442,14 @@ public class Index {
     }
 
     public static void exportar_prestamo() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("D:/Mis cosas/Jacob Estudios/F/ListaPréstamos.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/prestamo.txt");
             ReporteDAO reporteDao = new ReporteDAO();
             List<ReportePrestamo> reportes = reporteDao.listarusuarios();
-            salida.println("-----------------------------------------------Listado de Prestamos pendientes------------------------------------------------");
+            salida.println("\t ~~ Lista de Prestamos ~~");
             salida.println("ID\tFecha_Prestamo\t\tFecha_Devolucion\tUsuario\t\t\t\t\tTitulo\t\t\tEstado");
             for (ReportePrestamo reporte : reportes) {
                 salida.println(reporte.getIdreporte() + "\t"
@@ -464,14 +468,14 @@ public class Index {
     }
 
     public static void exportar_usuario() {
-        System.out.println("\n--------Archivo creado con éxito, volviendo al menú secundario.--------");
+        System.out.println("\n\tArchivo creado");
         PrintWriter salida = null;
 
         try {
-            salida = new PrintWriter("C:/Users/Alvaro Alva Chipana/Documents/F/ListaUsuarios.txt");
+            salida = new PrintWriter("C:/Users/benja/Escritorio/reportes/usuario.txt");
             UsuarioDAO usuarioDao = new UsuarioDAO();
             List<Usuario> usuarios = usuarioDao.listarusuarios();
-            salida.println("-----------------------------------Listado de Usuarios--------------------------------");
+            salida.println("\t ~~ Lista de Usuarios ~~");
             salida.println("ID\tNombreCompleto\t\t\t\tDni\t\tEstado");
             for (Usuario usuario : usuarios) {
                 salida.println(
@@ -492,8 +496,8 @@ public class Index {
     public static void listar_autor() {
         AutorDAO autorDao = new AutorDAO();
         List<Autor> autores = autorDao.listarautor();
-        System.out.println("----------------------Listado de Autores--------------------");
-        System.out.println("ID\t---NOMBRE COMPLETO---");
+        System.out.println("\t~~ Lista de Autores ~~");
+        System.out.println("ID\tNOMBRE COMPLETO");
         for (Autor autor : autores) {
             System.out.println(autor.getIdautor() + "\t"
                     + (autor.getNombreCompleto())
@@ -504,7 +508,7 @@ public class Index {
     public static void listar_devolucion() {
         DevolucionDAO reporteDao = new DevolucionDAO();
         List<Devolucion> reportes = reporteDao.listardevolucion();
-        System.out.println("-----------------------------------------------Listado de Devoluciones Dadas------------------------------------------------");
+        System.out.println("\t ~~ Lista de Devoluciones ~~");
         System.out.println("ID\tFecha_Prestamo\t\tFecha_Devolucion\tUsuario\t\t\t\t\tTitulo\t\t\tEstado");
         for (Devolucion reporte : reportes) {
             System.out.println(
@@ -519,7 +523,7 @@ public class Index {
 
     public static void listar_prestamo() {
         listar_usuario();
-        System.out.println("Elija el Dni del usuario:");
+        System.out.print("Elija el Dni del usuario: ");
         String dni = Leer.cadena();
         while (dni.length() != 8) {
             System.out.println("El DNI solo debe ser de 8 Dígitos:");
@@ -530,7 +534,7 @@ public class Index {
         DevolucionDAO reporteDao = new DevolucionDAO();
         DevolucionDAO devolucionDao = new DevolucionDAO();
         List<Devolucion> devoluciones = reporteDao.listarlibrosprestados(dni);
-        System.out.println("----------------------------------------------------Listado de Prestamos pendientes de " + dni + "---------------------------------------------------");
+        System.out.println("\t~~ Prestamos ~~" + dni + "~~");
         System.out.println("ID\tFecha_Prestamo\t\tFecha_Devolucion\tUsuario\t\t\t\t\tIdlibro\t\tTitulo\t\t\tEstado");
         for (Devolucion devolucion : devoluciones) {
             System.out.println(
@@ -549,7 +553,7 @@ public class Index {
     public static void listar_editorial() {
         EditorialDAO editorialDAO = new EditorialDAO();
         List<Editorial> editoriales = editorialDAO.listareditoriales();
-        System.out.println("---------------------------------------------------------------------Listado de Editoriales------------------------------------------------------------------------------------------------------");
+        System.out.println("~~ Lista de Editoriales ~~");
         System.out.println("ID\tNombre\t\t\tCodigo\t\t\tDireccion\t\t\t\t\t\t\tURL\t\t\t\t\t\t\t\tEstado");
         for (Editorial editorial : editoriales) {
             System.out.println(
@@ -565,7 +569,7 @@ public class Index {
     public static void listar_libro() {
         LibroDAO libroDao = new LibroDAO();
         List<ReporteLibro> reportes = libroDao.listarlibro();
-        System.out.println("---------------------------------------------------------------------------------------------------------------Listado de Libros------------------------------------------------------------------------------------");
+        System.out.println("~~ Lista de Libros ~~");
         System.out.println("ID\t\tTitulo\t\t\tISBN\t\tPaginas\t\t\tAño\tStock\tStock_Desponible\tAutor\t\t\t\t\tPais\t\t\tEditorial");
         for (ReporteLibro reporte : reportes) {
             System.out.println(reporte.getIdlibro() + "\t"
@@ -585,7 +589,7 @@ public class Index {
     public static void listar_pais() {
         PaisDAO paisDAO = new PaisDAO();
         List<Pais> paises = paisDAO.listarpaises();
-        System.out.println("--------Listado de Paises--------");
+        System.out.println("~~ Lista de Paises ~~");
         System.out.println("ID\tNombre\t\t\tEstado");
         for (Pais pais : paises) {
             System.out.println(pais.getIdpais() + "\t"
@@ -598,7 +602,7 @@ public class Index {
     public static void listar_prestamos() {
         ReporteDAO reporteDao = new ReporteDAO();
         List<ReportePrestamo> reportes = reporteDao.listarusuarios();
-        System.out.println("-----------------------------------------------Listado de Prestamos pendientes------------------------------------------------");
+        System.out.println("~~ Lista de Prestamos ~~");
         System.out.println("ID\tFecha_Prestamo\t\tFecha_Devolucion\tUsuario\t\t\t\t\tTitulo\t\t\tEstado");
         for (ReportePrestamo reporte : reportes) {
             System.out.println(reporte.getIdreporte() + "\t"
@@ -613,7 +617,7 @@ public class Index {
     public static void listar_usuario() {
         UsuarioDAO usuarioDao = new UsuarioDAO();
         List<Usuario> usuarios = usuarioDao.listarusuarios();
-        System.out.println("-----------------------------------Listado de Usuarios--------------------------------");
+        System.out.println("~~ Lista de Usuarios ~~");
         System.out.println("ID\tNombreCompleto\t\t\t\tDni\t\tEstado");
         for (Usuario usuario : usuarios) {
             System.out.println(usuario.getIdusuario() + "\t"
@@ -627,7 +631,7 @@ public class Index {
     public static void agregar_autor() {
         String nombre;
         String apellidos;
-
+        System.out.println("\n\t~~ Agregar Autor ~~");
         System.out.println("Nombre:");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
@@ -654,7 +658,7 @@ public class Index {
         String URL;
         String estado;
 
-        System.out.println("----Agregar Editorial----");
+        System.out.println("\n\t~~ Agregar Editorial ~~");
         System.out.println("Nombre: ");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
@@ -696,7 +700,8 @@ public class Index {
     }
 
     public static void agregar_libro() {
-
+        
+        System.out.println("\n\t~~ Agregar Libro ~~");
         String titulo;
         String isbn;
         String paginas;
@@ -737,7 +742,7 @@ public class Index {
         System.out.println("Stock:");
         stock = Leer.entero();
 
-        System.out.println("Stocks disponibles:");
+        System.out.println("Stock disponible:");
         Stock_disponibles = Leer.entero();
         listar_autor();
         System.out.println("Idautor:");
@@ -757,7 +762,7 @@ public class Index {
     public static void agregar_pais() {
         String nombre;
         String estado;
-        System.out.println("Agregar Pais");
+        System.out.println("\n\t~~ Agregar Pais ~~");
         System.out.print("Nombre: ");
         nombre = Leer.cadena();
         while (nombre.length() > 50) {
@@ -779,6 +784,7 @@ public class Index {
     }
 
     public static void agregar_usuario() {
+        System.out.println("\n\t~~ Agregar Usuario ~~");
         String nombre;
         String apellidos;
         String dni;
@@ -818,7 +824,7 @@ public class Index {
     }
 
     public static void agregar_prestamo() {
-
+        System.out.println("\n\t~~ Agregar Prestamo ~~");
         String fecha_prestamo;
         String fecha_devolucion;
         String estado;
@@ -859,6 +865,7 @@ public class Index {
 
     public static void editar_autor() {
         listar_autor();
+        System.out.println("\n\t~~ Editar Autor ~~");
         System.out.println("Id del campo a editar");
         int id = Leer.entero();
         String nombre;
@@ -884,6 +891,7 @@ public class Index {
     }
 
     public static void editar_devolucion() {
+        System.out.println("\n\t~~ Editar Devolucion ~~");
         String estado;
         System.out.println("Elija el id del prestamo a devolver:");
         int id = Leer.entero();
@@ -900,6 +908,7 @@ public class Index {
 
     public static void editar_editorial() {
         listar_editorial();
+        System.out.println("\n\t~~ Editar Editorial ~~");
         System.out.println("Ingresar ID de Editorial a Editar");
         int id = Leer.entero();
         String nombre;
@@ -951,6 +960,7 @@ public class Index {
 
     public static void editar_libro() {
         listar_libro();
+        System.out.println("\n\t~~ Editar Libro ~~");
         System.out.println("Id del libro a editar:");
         int id = Leer.entero();
 
@@ -1012,6 +1022,7 @@ public class Index {
 
     public static void editar_pais() {
         listar_pais();
+        System.out.println("\n\t~~ Editar Pais ~~");
         System.out.println("Ingrese el ID del Pais a editar: ");
         int id = Leer.entero();
         String nombre;
@@ -1039,6 +1050,7 @@ public class Index {
 
     public static void editar_usuario() {
         listar_usuario();
+        System.out.println("\n\t~~ Editar Usuario ~~");
         System.out.println("Ingrese el id del usuario a editar");
         int id = Leer.entero();
         String nombre;
@@ -1060,6 +1072,7 @@ public class Index {
 
     public static void eliminar_autor() {
         listar_autor();
+        System.out.println("\n\t~~ Eliminar Autor ~~");
         System.out.println("Id del campo a eliminar");
         int id = Leer.entero();
         AutorDAO autorDao = new AutorDAO();
@@ -1068,6 +1081,7 @@ public class Index {
 
     public static void eliminar_editorial() {
         listar_editorial();
+        System.out.println("\n\t~~ Eliminar Editorial ~~");
         System.out.println("Ingrese el ID de la Editorial a Eliminar");
         int id = Leer.entero();
         EditorialDAO epDAO = new EditorialDAO();
@@ -1076,6 +1090,7 @@ public class Index {
 
     public static void eliminar_libro() {
         listar_libro();
+        System.out.println("\n\t~~ Eliminar Libro ~~");
         System.out.println("Id del libro a eliminar:");
         int id = Leer.entero();
 
@@ -1085,6 +1100,7 @@ public class Index {
 
     public static void eliminar_pais() {
         listar_pais();
+        System.out.println("\n\t~~ Eliminar Pais ~~");
         System.out.print("Ingrese la ID del Pais a eliminar: ");
         int id = Leer.entero();
         PaisDAO paisDAO = new PaisDAO();
@@ -1093,6 +1109,7 @@ public class Index {
 
     public static void eliminar_usuario() {
         listar_usuario();
+        System.out.println("\n\t~~ Eliminar Usuario ~~");
         System.out.print("Ingrese la ID del Usuario a eliminar: ");
         int id = Leer.entero();
         UsuarioDAO usuarioDao = new UsuarioDAO();
