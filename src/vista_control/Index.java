@@ -901,7 +901,7 @@ public class Index {
         estado = "D";
         Devolucion devolucion = new Devolucion(id, estado);
         DevolucionDAO devolucionDao = new DevolucionDAO();
-        devolucionDao.lacosadelstock(idlibro);
+        devolucionDao.stock(idlibro);
         devolucionDao.editardevolucion(devolucion);
 
     }

@@ -3,7 +3,7 @@ package interfaces;
 import java.util.List;
 import modelos.Pais;
 
-public interface CRUDpais {
+public interface CRUD_pais {
 
     public List listarpaises(); // Listar
 

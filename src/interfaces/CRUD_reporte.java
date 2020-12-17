@@ -3,7 +3,7 @@ package interfaces;
 import modelos.Prestamo;
 import java.util.List;
 
-public interface CRUDreporte {
+public interface CRUD_reporte {
 
     public List listarusuarios(); // Listar
 

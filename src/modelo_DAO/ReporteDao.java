@@ -1,12 +1,12 @@
 package modelo_DAO;
 
-import interfaces.CRUDreporte;
 import modelos.*;
 import config.bd.ConectaBd;
 import java.sql.*;
 import java.util.*;
+import interfaces.CRUD_reporte;
 
-public class ReporteDAO implements CRUDreporte {
+public class ReporteDAO implements CRUD_reporte {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -22,7 +22,7 @@ public class ReporteDAO implements CRUDreporte {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Ga error");
+            System.out.println("reportedao error");
         }
         return true;
     }
@@ -49,7 +49,7 @@ public class ReporteDAO implements CRUDreporte {
             }
 
         } catch (Exception error) {
-            System.out.println("Listar error");
+            System.out.println("reportedao error");
 
         }
         return reportes;
@@ -73,7 +73,7 @@ public class ReporteDAO implements CRUDreporte {
             }
 
         } catch (Exception e) {
-            System.out.println("Buscar error");
+            System.out.println("reportedao error");
         }
         return e;
     }
@@ -93,7 +93,7 @@ public class ReporteDAO implements CRUDreporte {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Agregar error");
+            System.out.println("reportedao error");
         }
         return true;
     }

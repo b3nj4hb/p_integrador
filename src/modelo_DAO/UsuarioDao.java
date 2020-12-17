@@ -1,12 +1,12 @@
 package modelo_DAO;
 
-import interfaces.CRUDusuarios;
 import modelos.*;
 import config.bd.ConectaBd;
 import java.sql.*;
 import java.util.*;
+import interfaces.CRUD_usuario;
 
-public class UsuarioDAO implements CRUDusuarios {
+public class UsuarioDAO implements CRUD_usuario {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -33,7 +33,7 @@ public class UsuarioDAO implements CRUDusuarios {
 
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con el LISTAR");
+            System.out.println("reportedao error");
             System.out.println(error.getMessage());
         }
         return usuarios;
@@ -56,7 +56,7 @@ public class UsuarioDAO implements CRUDusuarios {
                 e.setEstado(rs.getString("estado"));
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la BUSQUEDA");
+            System.out.println("reportedao error");
             System.out.println(error.getMessage());
         }
         return e;
@@ -76,7 +76,7 @@ public class UsuarioDAO implements CRUDusuarios {
             pst.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Error: Problemas con el Agregar");
+            System.out.println("reportedao error");
             return false;
         }
         return true;
@@ -98,7 +98,7 @@ public class UsuarioDAO implements CRUDusuarios {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Editar error");
+            System.out.println("reportedao error");
         }
         return true;
     }
@@ -113,7 +113,7 @@ public class UsuarioDAO implements CRUDusuarios {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error en Eliminar");
+            System.out.println("reportedao error");
             return false;
         }
         return true;

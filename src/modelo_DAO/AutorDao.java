@@ -2,12 +2,12 @@ package modelo_DAO;
 
 import modelos.Autor;
 
-import interfaces.CRUD2;
 import java.util.*;
 import config.bd.ConectaBd;
 import java.sql.*;
+import interfaces.CRUD_autor;
 
-public class AutorDAO implements CRUD2 {
+public class AutorDAO implements CRUD_autor {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -33,7 +33,7 @@ public class AutorDAO implements CRUD2 {
             }
 
         } catch (Exception e) {
-            System.out.println("Listar error");
+            System.out.println("autordao error");
         }
         return autores;
     }
@@ -53,7 +53,7 @@ public class AutorDAO implements CRUD2 {
             }
 
         } catch (Exception e) {
-            System.out.println("Listar error");
+            System.out.println("autordao error");
         }
         return e;
     }
@@ -70,7 +70,7 @@ public class AutorDAO implements CRUD2 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Agregar error");
+            System.out.println("autordao error");
         }
         return true;
 
@@ -90,7 +90,7 @@ public class AutorDAO implements CRUD2 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Editar error");
+            System.out.println("autordao error");
         }
         return true;
     }
@@ -106,7 +106,7 @@ public class AutorDAO implements CRUD2 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Editar error");
+            System.out.println("autordao error");
         }
         return true;
     }

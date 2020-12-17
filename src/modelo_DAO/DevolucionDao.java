@@ -4,9 +4,9 @@ import java.sql.*;
 import config.bd.ConectaBd;
 import java.util.*;
 import modelos.*;
-import interfaces.CRUDdevolucion;
+import interfaces.CRUD_devolucion;
 
-public class DevolucionDAO implements CRUDdevolucion {
+public class DevolucionDAO implements CRUD_devolucion {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -15,14 +15,14 @@ public class DevolucionDAO implements CRUDdevolucion {
     Devolucion e = new Devolucion();
 
     @Override
-    public boolean lacosadelstock(int idlibro) {
+    public boolean stock(int idlibro) {
         String consulta = " update libro " + " set " + " Stock_disponibles = Stock_disponibles+1 " + " where idlibro= " + idlibro;
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Ga error");
+            System.out.println("devolucion dao error");
         }
         return true;
     }
@@ -50,7 +50,7 @@ public class DevolucionDAO implements CRUDdevolucion {
             }
 
         } catch (Exception error) {
-            System.out.println("Listar error");
+            System.out.println("devolucion dao error");
 
         }
         return devoluciones;
@@ -71,7 +71,7 @@ public class DevolucionDAO implements CRUDdevolucion {
             }
 
         } catch (Exception e) {
-            System.out.println("Buscar error");
+            System.out.println("devolucion dao error");
         }
         return e;
     }
@@ -88,7 +88,7 @@ public class DevolucionDAO implements CRUDdevolucion {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la EDICIÓN");
+            System.out.println("Error: devolucion dao error");
             System.out.println(error.getMessage());
             return false;
         }
@@ -117,7 +117,7 @@ public class DevolucionDAO implements CRUDdevolucion {
             }
 
         } catch (Exception error) {
-            System.out.println("Listar error");
+            System.out.println("devolucion dao error");
 
         }
         return reportes;

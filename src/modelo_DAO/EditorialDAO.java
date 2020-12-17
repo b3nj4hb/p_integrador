@@ -4,9 +4,9 @@ import java.sql.*;
 import config.bd.ConectaBd;
 import java.util.*;
 import modelos.*;
-import interfaces.CRUDeditorial;
+import interfaces.CRUD_editorial;
 
-public class EditorialDAO implements CRUDeditorial {
+public class EditorialDAO implements CRUD_editorial {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -33,7 +33,7 @@ public class EditorialDAO implements CRUDeditorial {
                 editoriales.add(editorial);
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con el LISTAR");
+            System.out.println("editorial dao error");
             System.out.println(error.getMessage());
         }
         return editoriales;
@@ -57,7 +57,7 @@ public class EditorialDAO implements CRUDeditorial {
                 e.setEstado(rs.getString("estado"));
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la BUSQUEDA");
+            System.out.println("editorial dao error");
             System.out.println(error.getMessage());
         }
         return e;
@@ -77,7 +77,7 @@ public class EditorialDAO implements CRUDeditorial {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error en agregar");
+            System.out.println("editorial dao error");
             return false;
         }
         return true;
@@ -99,7 +99,7 @@ public class EditorialDAO implements CRUDeditorial {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la EDICIÓN");
+            System.out.println("editorial dao error");
             System.out.println(error.getMessage());
             return false;
         }
@@ -116,7 +116,7 @@ public class EditorialDAO implements CRUDeditorial {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error en Eliminar");
+            System.out.println("editorial dao error");
             return false;
         }
         return true;

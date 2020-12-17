@@ -4,9 +4,9 @@ import java.sql.*;
 import config.bd.ConectaBd;
 import java.util.*;
 import modelos.*;
-import interfaces.CRUDpais;
+import interfaces.CRUD_pais;
 
-public class PaisDAO implements CRUDpais {
+public class PaisDAO implements CRUD_pais {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -30,7 +30,7 @@ public class PaisDAO implements CRUDpais {
                 paises.add(pais);
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con el LISTAR");
+            System.out.println("paisdao error");
             System.out.println(error.getMessage());
         }
         return paises;
@@ -52,7 +52,7 @@ public class PaisDAO implements CRUDpais {
                 pa.setEstado(rs.getString("estado"));
             }
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la BUSQUEDA");
+            System.out.println("paisdao error");
             System.out.println(error.getMessage());
         }
         return pa;
@@ -70,7 +70,7 @@ public class PaisDAO implements CRUDpais {
             pst.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Error: Problemas con el Agregar");
+            System.out.println("paisdao error");
             return false;
         }
         return true;
@@ -89,7 +89,7 @@ public class PaisDAO implements CRUDpais {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (SQLException error) {
-            System.out.println("Error: Problemas con el Editar");
+            System.out.println("paisdao error");
             System.out.println(error.getMessage());
             return false;
         }
@@ -106,7 +106,7 @@ public class PaisDAO implements CRUDpais {
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error en Eliminar");
+            System.out.println("paisdao error");
             return false;
         }
         return true;

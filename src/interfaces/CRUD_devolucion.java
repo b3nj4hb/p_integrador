@@ -3,7 +3,7 @@ package interfaces;
 import modelos.Devolucion;
 import java.util.List;
 
-public interface CRUDdevolucion {
+public interface CRUD_devolucion {
 
     public List listardevolucion(); // Listar
 
@@ -13,5 +13,5 @@ public interface CRUDdevolucion {
 
     public boolean editardevolucion(Devolucion devolucion);
 
-    public boolean lacosadelstock(int idlibro);
+    public boolean stock(int idlibro);
 }

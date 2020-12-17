@@ -1,12 +1,12 @@
 package modelo_DAO;
 
 import modelos.*;
-import interfaces.Crud1;
 import java.util.*;
 import config.bd.ConectaBd;
 import java.sql.*;
+import interfaces.CRUD_libro;
 
-public class LibroDAO implements Crud1 {
+public class LibroDAO implements CRUD_libro {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -40,7 +40,7 @@ public class LibroDAO implements Crud1 {
             }
 
         } catch (Exception error) {
-            System.out.println("Listar error");
+            System.out.println("librodao error");
 
         }
         return reportes;
@@ -68,7 +68,7 @@ public class LibroDAO implements Crud1 {
             }
 
         } catch (Exception e) {
-            System.out.println("Buscar error");
+            System.out.println("librodao error");
         }
         return e;
     }
@@ -92,7 +92,7 @@ public class LibroDAO implements Crud1 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Agregar error");
+            System.out.println("librodao error");
         }
         return true;
     }
@@ -118,7 +118,7 @@ public class LibroDAO implements Crud1 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Editar error");
+            System.out.println("librodao error");
         }
         return true;
     }
@@ -134,7 +134,7 @@ public class LibroDAO implements Crud1 {
             pst.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Editar error");
+            System.out.println("librodao error");
         }
         return true;
     }
@@ -150,14 +150,14 @@ public class LibroDAO implements Crud1 {
             while (rs.next()) {
                 ReporteLibro stock = new ReporteLibro();
 
-                stock.setStock_disponibles(rs.getInt("Stock_disponibles"));
+                stock.setStock_disponibles(rs.getInt("librodao error"));
 
                 stocks.add(stock);
 
             }
 
         } catch (Exception error) {
-            System.out.println("Listar error");
+            System.out.println("librodao error");
 
         }
         return stocks;

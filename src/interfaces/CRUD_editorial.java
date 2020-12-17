@@ -3,7 +3,7 @@ package interfaces;
 import java.util.List;
 import modelos.Editorial;
 
-public interface CRUDeditorial {
+public interface CRUD_editorial {
 
     public List listareditoriales(); // Listar
 

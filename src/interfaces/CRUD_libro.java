@@ -3,7 +3,7 @@ package interfaces;
 import modelos.Libro;
 import java.util.List;
 
-public interface Crud1 {
+public interface CRUD_libro {
 
     public List listarlibro(); // Listar
 

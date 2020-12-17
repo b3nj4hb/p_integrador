@@ -3,7 +3,7 @@ package interfaces;
 import modelos.Usuario;
 import java.util.List;
 
-public interface CRUDusuarios {
+public interface CRUD_usuario {
 
     public List listarusuarios(); // Listar
 
