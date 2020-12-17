@@ -2,12 +2,11 @@ package modelo_DAO;
 
 import java.sql.*;
 import config.bd.ConectaBd;
-import java.util.ArrayList;
-import java.util.List;
-import modelos.Devolucion;
+import java.util.*;
+import modelos.*;
 import interfaces.CRUDdevolucion;
 
-public class DevolucionDao implements CRUDdevolucion {
+public class DevolucionDAO implements CRUDdevolucion {
 
     ConectaBd cn = new ConectaBd();
     Connection con;

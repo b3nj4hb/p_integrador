@@ -2,9 +2,8 @@ package modelo_DAO;
 
 import java.sql.*;
 import config.bd.ConectaBd;
-import java.util.ArrayList;
-import java.util.List;
-import modelos.Pais;
+import java.util.*;
+import modelos.*;
 import interfaces.CRUDpais;
 
 public class PaisDAO implements CRUDpais {

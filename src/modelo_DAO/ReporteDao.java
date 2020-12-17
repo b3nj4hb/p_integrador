@@ -1,19 +1,12 @@
 package modelo_DAO;
 
 import interfaces.CRUDreporte;
-import modelos.Prestamo;
-import modelos.ReportePrestamo;
-import java.util.List;
-import java.util.List;
+import modelos.*;
 import config.bd.ConectaBd;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.*;
+import java.util.*;
 
-public class ReporteDao implements CRUDreporte {
+public class ReporteDAO implements CRUDreporte {
 
     ConectaBd cn = new ConectaBd();
     Connection con;

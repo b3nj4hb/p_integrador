@@ -3,16 +3,11 @@ package modelo_DAO;
 import modelos.Autor;
 
 import interfaces.CRUD2;
-import java.util.List;
-import java.util.List;
+import java.util.*;
 import config.bd.ConectaBd;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
 
-public class AutorDao implements CRUD2 {
+public class AutorDAO implements CRUD2 {
 
     ConectaBd cn = new ConectaBd();
     Connection con;

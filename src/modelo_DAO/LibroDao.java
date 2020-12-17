@@ -1,18 +1,12 @@
 package modelo_DAO;
 
-import modelos.Libro;
-import modelos.ReporteLibro;
+import modelos.*;
 import interfaces.Crud1;
-import java.util.List;
-import java.util.List;
+import java.util.*;
 import config.bd.ConectaBd;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
 
-public class LibroDao implements Crud1 {
+public class LibroDAO implements Crud1 {
 
     ConectaBd cn = new ConectaBd();
     Connection con;

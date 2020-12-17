@@ -2,9 +2,8 @@ package modelo_DAO;
 
 import java.sql.*;
 import config.bd.ConectaBd;
-import java.util.ArrayList;
-import java.util.List;
-import modelos.Editorial;
+import java.util.*;
+import modelos.*;
 import interfaces.CRUDeditorial;
 
 public class EditorialDAO implements CRUDeditorial {

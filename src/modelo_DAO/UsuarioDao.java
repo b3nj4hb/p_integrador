@@ -1,18 +1,12 @@
 package modelo_DAO;
 
 import interfaces.CRUDusuarios;
-import modelos.Usuario;
-import java.util.List;
-import java.util.List;
+import modelos.*;
 import config.bd.ConectaBd;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.*;
+import java.util.*;
 
-public class UsuarioDao implements CRUDusuarios {
+public class UsuarioDAO implements CRUDusuarios {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
