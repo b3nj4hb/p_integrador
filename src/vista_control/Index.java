@@ -30,7 +30,7 @@ public class Index {
         System.out.println("6. Prestamo");
         System.out.println("7. Devolucion");
         System.out.println("8. Salir");
-        System.out.print("Escoja opción [1-9]: ");
+        System.out.print("Escoja opción [1-8]: ");
     }
 
     public static void Menu_secundario() {
